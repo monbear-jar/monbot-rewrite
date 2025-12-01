@@ -1,5 +1,4 @@
 monbot/
 bot_info.json
-cogs/__pycache__/downloader.cpython-312.pyc
-cogs/__pycache__/mp3dl.cpython-312.pyc
+cogs/__pycache__/
 cogs/resources/
