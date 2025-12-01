@@ -39,12 +39,12 @@ async def load_extensions():
 
 @client.event
 async def on_ready():
-    if guildID is not None:
-        synced = await client.tree.sync(guild=discord.Object(id=guildID))
+    if guildID != "":
+        synced = await client.tree.sync(guild=discord.Object(id=int(guildID)))
     else:
         synced = await client.tree.sync()
     print(synced)
-    print(f'Logged into {client.user} \n Bot online!')
+    print(f'Logged into {client.user}\nBot online!')
 
 async def main():
     async with client:
