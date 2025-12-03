@@ -52,7 +52,7 @@ except FileNotFoundError:
             "prefix": prefix,
             "guildID": guildID,
             "ownerID": ownerID,
-            "cogs_blacklist": cogs_blacklist
+            "cogs_blacklist": cogsBlacklist
         }
         json.dump(botInfoData, f, indent=2)
         
