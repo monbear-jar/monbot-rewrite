@@ -7,15 +7,18 @@ import random, yt_dlp, string, functools, validators, asyncio, aiohttp, requests
 from concurrent.futures import ThreadPoolExecutor
 from typing import Literal
 
+resourceDir = ".//cogs//resources//"
+mediaDir = ".//cogs//resources//downloader//"
 mp3Dir = ".//cogs//resources//downloader//mp3"
 mp4Dir = ".//cogs//resources//downloader//mp4"
 
-if os.path.isdir(mp4Dir) == False:   
-    os.mkdir(mp4Dir)
-elif os.path.isdir(mp3Dir) == False:
-    os.mkdir(mp3Dir)
-else:
-    pass
+dirList = [resourceDir, mediaDir, mp3Dir, mp4Dir]
+
+for folder in dirList:
+    try:
+        os.path.isdir(folder)
+    except FileNotFoundError:
+        os.mkdir(folder)
 
 class Downloader(commands.Cog):
     def __init__(self, bot):

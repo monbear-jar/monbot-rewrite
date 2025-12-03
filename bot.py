@@ -3,7 +3,7 @@ from discord.ext import commands
 
 import os, json, asyncio
 
-botInfo = ".\\bot_info.json"
+botInfo = ".//bot_info.json"
 expectedKeys = ["token", "prefix", "ownerID", "guildID","cogs_blacklist"]
 
 try:
@@ -70,6 +70,10 @@ client = commands.Bot(prefix, intents=intents)
 
 
 async def load_extensions():
+    if os.path.isdir(".//cogs//resources//") == False:
+        os.mkdir(".//cogs//resources//")
+    else:
+        pass
     for cog in os.listdir('cogs'):
         if cog.endswith('.py'):
             if cog[:-3] in cogsBlacklist:
